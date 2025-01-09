@@ -4,20 +4,21 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('open');
 });
 
-function toggleMenu() {
-    const menu = document.querySelector('.menu');
-    menu.classList.toggle('open');
-}
 
 function toggleMenu() {
     const menu = document.querySelector('.menu');
+    const overlay = document.querySelector('.overlay');
     const body = document.body;
 
-    if (menu.classList.contains('open')) {
+    const isOpen = menu.classList.contains('open');
+
+    if (isOpen) {
         menu.classList.remove('open');
+        overlay.classList.remove('open');
         body.classList.remove('no-scroll');
     } else {
         menu.classList.add('open');
+        overlay.classList.add('open');
         body.classList.add('no-scroll');
     }
 }
